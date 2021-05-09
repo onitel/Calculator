@@ -1,0 +1,72 @@
+*, *::before, *::after {
+    box-sizing: border-box; /* easier to size the elements, padding/border ⊂ width/height */
+    font-family: 'Varela Round', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding:0;
+    margin:0;
+    background: linear-gradient(rgb(102, 204, 235), rgb(211, 234, 162));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.containerGrid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 5px;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, minmax(65px, 100px));
+    grid-template-rows: minmax(100px, auto) repeat(5, 100px);
+}
+/* minmax(120px, auto) - the output will include as much numbers as we need */
+@media screen and (max-height: 650px) {
+    .containerGrid {
+        grid-template-rows: minmax(100px, auto) repeat(5, 85px);
+    }
+}
+
+.containerGrid > button {
+    cursor: pointer;
+    font-size: clamp(1.5rem, 5vmin, 2.5rem);
+    border: 1px solid white;
+    outline: none; /* marginea de dupa border */
+    background-color: rgba(215, 242, 250, 0.75);
+}
+
+.containerGrid > button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.containerGrid > button:active {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.spanTwo {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1/ -1;  /* will span the output to all the columns, can be also 1/ 4 */
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around; /* makes more equal space around elements */
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;  /* brakes the words down */
+    word-break: break-all;  /* brakes the words down */
+}
+
+.output  .secondLineNumber {
+    color: rgba(215, 242, 250, 0.75);
+    font-size: 1.5rem;
+}
+
+.output  .firstLineNumber {
+    color: white;
+    font-size: 2.5rem;
+}
