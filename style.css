@@ -34,6 +34,7 @@ body {
     border: 1px solid white;
     outline: none; /* marginea de dupa border */
     background-color: rgba(215, 242, 250, 0.75);
+    transition: background-color .2s;
 }
 
 .containerGrid > button:hover {
@@ -41,7 +42,7 @@ body {
 }
 
 .containerGrid > button:active {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(243, 237, 237, 0.884);
 }
 
 .spanTwo {
